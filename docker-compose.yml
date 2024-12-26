@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  touitomamout-mahd:
+    container_name: "touitomamout-mahd"
+    image: louisgrasset/touitomamout:latest
+    restart: always
+    environment:
+      - ENV_FILE=/data/.env
+      - STORAGE_DIR=/data
+    volumes:
+      - ./data-mahd:/data
+  touitomamout-cbps:
+    container_name: "touitomamout-cbps"
+    image: louisgrasset/touitomamout:latest
+    restart: always
+    environment:
+      - ENV_FILE=/data/.env
+      - STORAGE_DIR=/data
+    volumes:
+      - ./data-cbps:/data
